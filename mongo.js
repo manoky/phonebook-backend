@@ -6,7 +6,9 @@ if (process.argv.length < 3) {
 }
 
 
-const url = process.env.MONGODB_URI
+
+const password = process.argv[2]
+const url = `mongodb+srv://devmania:${password}cluster0-2spfb.mongodb.net/phonebook?retryWrites=true&w=majority`
 
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(console.log('DB connected'))
